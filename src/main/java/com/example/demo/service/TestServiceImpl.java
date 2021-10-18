@@ -32,22 +32,8 @@ public class TestServiceImpl implements TestService {
 	}
 
 	@Override
-<<<<<<< HEAD
 	public void updateEmployee(Employee employee) {// update Service
 		testMapper.updateEmployee(employee);		
-=======
-	public List<Employee> selectTest() {
-		// TODO Auto-generated method stub
-		List<Employee> employees = new ArrayList<Employee>();
-		employees.add(new Employee("12302","정재엽"));
-		//return "정재엽";
-		return testMapper.selectTest();
-	}
-
-	@Override
-	public List<Employee> findAllEmployees() {
-		return testMapper.selectAllEmployees();
->>>>>>> upstream/master
 	}
 	
 	@Override

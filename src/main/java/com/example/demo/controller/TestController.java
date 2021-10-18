@@ -2,11 +2,8 @@ package com.example.demo.controller;
 
 import java.util.List;
 
-<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-=======
->>>>>>> upstream/master
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,10 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.service.TestService;
 import com.example.demo.vo.Employee;
 
-import lombok.AllArgsConstructor;
-
 @RestController
-<<<<<<< HEAD
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/", method = { RequestMethod.GET, RequestMethod.POST })
 public class TestController {
@@ -42,25 +36,6 @@ public class TestController {
 		return testService.findEmployeeByIdOrName(employeeInfo);
 	}
 
-=======
-@AllArgsConstructor
-@RequestMapping(value = "/")
-public class TestController {
-	
-	private TestService testService;
-	
-	@GetMapping("/test")
-    List<Employee> testGet(){
-		return testService.selectTest();
-    }
-	
-	// 직원 ALL 조회
-	@GetMapping("/all")
-	List<Employee> findAllEmployees() {
-		return testService.findAllEmployees();
-	}
-	
->>>>>>> upstream/master
 	// 직원등록
 	@PostMapping("/insertEmployee")
 	String insertEmployee(@RequestBody Employee employeeParm) {
