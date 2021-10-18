@@ -12,6 +12,6 @@ import com.example.demo.vo.Employee;
 @Repository
 @Mapper
 public interface TestMapper {
-	List<Employee> selectTest();
 	List<Employee> selectAllEmployees();
+	List<Employee> selectEmployeeByIdOrName(String employeeInfo);
 }

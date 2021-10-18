@@ -5,6 +5,6 @@ import java.util.List;
 import com.example.demo.vo.Employee;
 
 public interface TestService {
-	List<Employee> selectTest();
 	List<Employee> findAllEmployees();
+	List<Employee> findEmployeeByIdOrName(String employeeInfo);
 }

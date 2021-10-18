@@ -2,7 +2,9 @@ package com.example.demo.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,28 +16,35 @@ import lombok.AllArgsConstructor;
 @RestController
 @AllArgsConstructor
 @RequestMapping(value = "/")
+@CrossOrigin(origins = "*")
 public class TestController {
 	
 	private TestService testService;
 	
-	@GetMapping("/test")
-    List<Employee> testGet(){
-		return testService.selectTest();
-    }
-	
 	// 직원 ALL 조회
-	@GetMapping("/all")
+	@GetMapping("/search")
 	List<Employee> findAllEmployees() {
 		return testService.findAllEmployees();
 	}
 	
-	// 직원등록
+	// 직원 조회 - EmployeeId Or EmployeeName
+	@GetMapping("/search/{employeeInfo}")
+	List<Employee> findEmployeeByIdOrName(@PathVariable String employeeInfo) {
+		return testService.findEmployeeByIdOrName(employeeInfo);
+	}
 	
-	// 직원삭제(ID)
+	// Exception
+	@GetMapping("/exception/{exceptionKind}")
+	void executeException(@PathVariable String exceptionKind) {
+		if("numberformat".equals(exceptionKind)) {
+			String s = "a";
+			System.out.println(Integer.parseInt(s));
+		}
+		
+		if("nullpointer".equals(exceptionKind)) {
+			String a = null;
+			a.equals("abcdefg");
+		}
+	}
 	
-	// 직원조회(ID)
-	
-	// 직원이름변경(ID)
-	
-	// 전체조회(ID)
 }
