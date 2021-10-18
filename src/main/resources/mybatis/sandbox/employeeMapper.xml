@@ -12,4 +12,22 @@
 		WHERE 1=1
 		AND (EMPLOYEE_ID = #{employeeInfo} OR EMPLOYEE_NAME = #{employeeInfo})
 	</select>
+
+	<insert id="insertEmployee" parameterType="Employee">
+		INSERT INTO employee
+		(employee_id, employee_name)
+		VALUES (#{employeeId}, #{employeeName})
+	</insert>
+
+	<update id="updateEmployee" parameterType="Employee">
+		update employee set
+		employee_name = #{employeeName}
+		where employee_id = #{employeeId}
+	</update>
+
+	<delete id="deleteEmployee" parameterType="String">
+		DELETE
+		FROM EMPLOYEE
+		WHERE EMPLOYEE_ID = #{EMPLOYEE_ID}
+	</delete>
 </mapper>

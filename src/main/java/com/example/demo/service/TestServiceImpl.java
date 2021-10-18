@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +26,21 @@ public class TestServiceImpl implements TestService {
 		return testMapper.selectEmployeeByIdOrName(employeeInfo);
 	}
 	
+	
+	@Override
+	public void insertEmployee(Employee employee) {// insert Service
+		testMapper.insertEmployee(employee);
+	}
+
+	@Override
+	public void updateEmployee(Employee employee) {// update Service
+		testMapper.updateEmployee(employee);		
+	}
+	
+	@Override
+	public void removeEmployeeById(String employeeId) {
+		testMapper.deleteEmployee(employeeId);
+	}
+	
+
 }
