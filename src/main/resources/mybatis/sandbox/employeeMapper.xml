@@ -1,8 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.TestMapper">
+<<<<<<< HEAD
+
+	<select id="selectAllEmployees" resultType="Employee">
+		SELECT *
+		FROM EMPLOYEE
+	</select>
+
+	<select id="selectEmployeeByIdOrName" resultType="Employee">
+		SELECT *
+		FROM
+		EMPLOYEE
+		WHERE 1=1
+		AND (EMPLOYEE_ID = #{employeeInfo} OR EMPLOYEE_NAME =
+		#{employeeInfo})
+	</select>
+
+	<insert id="insertEmployee" parameterType="Employee">
+		INSERT INTO employee
+		(employee_id, employee_name)
+		VALUES (#{employeeId}, #{employeeName})
+	</insert>
+
+	<update id="updateEmployee" parameterType="Employee">
+		update employee set
+		employee_name = #{employeeName}
+		where employee_id = #{employeeId}
+	</update>
+
+	<delete id="deleteEmployee" parameterType="String">
+		DELETE
+		FROM EMPLOYEE
+		WHERE EMPLOYEE_ID = #{EMPLOYEE_ID}
+	</delete>
+</mapper>
+=======
 	<select id="selectAllEmployees" resultType="Employee"> 
 		SELECT *
 		  FROM EMPLOYEE
 	</select>
 </mapper>
+>>>>>>> upstream/master
