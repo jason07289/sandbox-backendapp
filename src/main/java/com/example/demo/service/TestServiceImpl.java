@@ -8,12 +8,14 @@ import org.springframework.stereotype.Service;
 import com.example.demo.mapper.TestMapper;
 import com.example.demo.vo.Employee;
 
+import lombok.AllArgsConstructor;
+
 @Service
+@AllArgsConstructor
 public class TestServiceImpl implements TestService {
 
-	@Autowired
 	TestMapper testMapper;
-	
+
 	@Override
 	public List<Employee> findAllEmployees() {
 		return testMapper.selectAllEmployees();
@@ -24,11 +26,9 @@ public class TestServiceImpl implements TestService {
 		return testMapper.selectEmployeeByIdOrName(employeeInfo);
 	}
 	
-	
 	@Override
 	public void insertEmployee(Employee employee) {// insert Service
 		testMapper.insertEmployee(employee);
-		
 	}
 
 	@Override

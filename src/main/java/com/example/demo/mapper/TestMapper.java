@@ -11,12 +11,8 @@ import com.example.demo.vo.Employee;
 @Mapper
 public interface TestMapper {
 	List<Employee> selectAllEmployees();
-
 	List<Employee> selectEmployeeByIdOrName(String employeeInfo);
-
 	void insertEmployee(Employee employee);
-
 	void updateEmployee(Employee employee);
-	
 	void deleteEmployee(String employeeId);
 }

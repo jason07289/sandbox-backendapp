@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,18 +9,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.service.TestService;
 import com.example.demo.vo.Employee;
 
+import lombok.AllArgsConstructor;
+
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(value = "/", method = { RequestMethod.GET, RequestMethod.POST })
+@AllArgsConstructor
+@RequestMapping(value = "/")
 public class TestController {
 
-	@Autowired
 	private TestService testService;
 
 	// 직원 ALL 조회
@@ -76,4 +76,6 @@ public class TestController {
 			a.equals("abcdefg");
 		}
 	}
+
+
 }

@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.TestMapper">
-
 	<select id="selectAllEmployees" resultType="Employee">
 		SELECT *
-		FROM EMPLOYEE
+		  FROM EMPLOYEE
 	</select>
 
 	<select id="selectEmployeeByIdOrName" resultType="Employee">
 		SELECT *
-		FROM
-		EMPLOYEE
-		WHERE 1=1
-		AND (EMPLOYEE_ID = #{employeeInfo} OR EMPLOYEE_NAME =
-		#{employeeInfo})
+		  FROM EMPLOYEE
+		 WHERE 1=1
+		   AND (EMPLOYEE_ID = #{employeeInfo} OR EMPLOYEE_NAME = #{employeeInfo})
 	</select>
 
 	<insert id="insertEmployee" parameterType="Employee">

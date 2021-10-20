@@ -10,9 +10,6 @@ class TestappApplicationTests {
 
 	@Test
 	void contextLoads() {
-		ApplicationContext ac = new AnnotationConfigApplicationContext();
-		ac.getBean("testMapper");
-		
 	}
 
 }
