@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>testapp</artifactId>
+	<artifactId>sandbox-backendapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>testapp</name>
+	<name>sandbox-backendapp</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -60,6 +60,18 @@
 			<version>5.8.1</version>
 			<type>pom</type>
 			<scope>import</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
 		</dependency>
 	</dependencies>
 

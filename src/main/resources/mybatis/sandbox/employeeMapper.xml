@@ -3,14 +3,14 @@
 <mapper namespace="com.example.demo.mapper.TestMapper">
 	<select id="selectAllEmployees" resultType="Employee">
 		SELECT *
-		FROM EMPLOYEE
+		  FROM EMPLOYEE
 	</select>
 
 	<select id="selectEmployeeByIdOrName" resultType="Employee">
 		SELECT *
-		FROM EMPLOYEE
-		WHERE 1=1
-		AND (EMPLOYEE_ID = #{employeeInfo} OR EMPLOYEE_NAME = #{employeeInfo})
+		  FROM EMPLOYEE
+		 WHERE 1=1
+		   AND (EMPLOYEE_ID = #{employeeInfo} OR EMPLOYEE_NAME = #{employeeInfo})
 	</select>
 
 	<insert id="insertEmployee" parameterType="Employee">
